@@ -27,14 +27,13 @@ app.use(limiter);
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    origin: "*",
     credentials: true,
   })
 );
 
 app.use(express.urlencoded({ extended: false }));
 
-//
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
